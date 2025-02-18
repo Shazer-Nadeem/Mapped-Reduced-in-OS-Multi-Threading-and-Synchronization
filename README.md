@@ -100,7 +100,3 @@ The project successfully implements a basic MapReduce framework in C++ on a sing
 1. Extend the implementation to a distributed system with multiple nodes.
 2. Optimize for handling larger datasets with advanced data structures.
 3. Incorporate fault tolerance for thread and process failures.
-
----
-Feel free to update and enhance this README file with additional diagrams, installation instructions, or detailed code explanations as needed!
-
