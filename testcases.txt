@@ -1,0 +1,80 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Test Case 1: Basic Functionality with Small Input
+Objective: Verify the correct output for a small, typical input.
+
+Input:
+red blue green yellow red green blue yellow blue green
+Expected Output:
+
+Key: red, Aggregated Value: 2
+Key: blue, Aggregated Value: 3
+Key: green, Aggregated Value: 3
+Key: yellow, Aggregated Value: 2
+Steps:
+Run the mapper with the input text.
+Observe the key-value pairs written to the pipes.
+Verify the shuffle phase groups the keys correctly.
+Run the reducer and confirm the aggregated results.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case 2: Edge Case - Empty Input
+Objective: Verify the program handles an empty input string.
+
+Input:
+
+Expected Output:
+Ensure no keys are shuffled or aggregated.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case 3: Edge Case - Single Word Input
+Objective: Verify the program handles a single word input.
+
+Input:
+apple
+Expected Output:
+Key: apple, Aggregated Value: 1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case 4: Edge Case - Single Word Repeated
+Objective: Verify the program handles a repeated single word input.
+
+Input:
+apple apple apple
+Expected Output:
+
+Key: apple, Aggregated Value: 3
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case 5: Edge Case - Large Input with Multiple Words
+Objective: Verify the program can handle a large input string efficiently.
+
+Input:
+the quick brown fox jumps over the lazy dog the quick brown fox
+Expected Output:
+
+
+Key: the, Aggregated Value: 3
+Key: quick, Aggregated Value: 2
+Key: brown, Aggregated Value: 2
+Key: fox, Aggregated Value: 2
+Key: jumps, Aggregated Value: 1
+Key: over, Aggregated Value: 1
+Key: lazy, Aggregated Value: 1
+Key: dog, Aggregated Value: 1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Test Case 6: Edge Case - Very Large Input
+Objective: Test the program's ability to handle a very large input.
+
+Input: A string with 1000 repetitions of the sentence: "hello world".
+hello world hello world hello world ... (repeated 1000 times)
+
+Expected Output:
+
+Key: hello, Aggregated Value: 1000
+Key: world, Aggregated Value: 1000
